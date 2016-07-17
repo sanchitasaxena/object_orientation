@@ -71,8 +71,8 @@ Part 1: Discussion
    For example, if a class attribute sets the age of a Hackbrighter to be 
    age = 23, and I passed an object sanchita = Student(), I would make sure to
    create an instance attribute on the object sanchita as sanchita.age = 25. 
-   That way, I am overriding the class attribute and providing the correct info
-   for that particular instance.
+   That way, I am overriding the class attribute value of 23 and providing 
+   the correct info for that particular instance.
 
 
 """
@@ -80,3 +80,48 @@ Part 1: Discussion
 
 # Parts 2 through 5:
 # Create your classes and class methods
+
+
+######################################PART 2####################################
+
+class Student(object):
+    def __init__(self, first_name, last_name, address): # 2 arguements, 3 parameters
+        self.first_name = first_name # attribute for first name
+        self.last_name = last_name # attribute for last name
+        self.address = address # attribute for address
+
+    def StudentInfo(self): # just to confirm if the function works :)
+        print self.first_name + " " + self.last_name + " lives at " + self.address
+
+# Question class stores questions and answers for the exam class.
+# The Exam class has a method create exam, which takes the questions from the
+# question class and puts them in an empty list - initialize the list within
+# the Exam class
+
+
+# class Question creates questions with parameters question and correct answer
+class AbstractQuestion(object):
+    def __init__(self, question, correct_answer):  # parameters asked from user
+        self.question = question  # question class attribute
+        self.correct_answer = correct_answer  # answer class attribute
+
+
+class Exam(AbstractQuestion):
+    def __init__(self, question, correct_answer, exam_name, final_questions=[]):
+        super(Exam, self).__init__(question, correct_answer)
+
+        self.exam_name = exam_name
+        self.final_questions = final_questions
+
+    def CreateExam(self):
+        for item in self.final_questions:
+            self.final_questions.append(self.question)
+        return self.exam_name, self.final_questions
+
+
+
+######################################PART 3####################################
+
+
+
+######################################PART 4####################################
