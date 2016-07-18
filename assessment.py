@@ -106,17 +106,25 @@ class AbstractQuestion(object):
         self.correct_answer = correct_answer  # answer class attribute
 
 
-class Exam(AbstractQuestion):
-    def __init__(self, question, correct_answer, exam_name, final_questions=[]):
-        super(Exam, self).__init__(question, correct_answer)
-
+class Exam(object):
+    def __init__(self, question, correct_answer, exam_name, questions):
+        self.question = question
+        self.correct_answer = correct_answer
         self.exam_name = exam_name
-        self.final_questions = final_questions
+        self.questions = []
 
+# keep at it at home -- 
     def CreateExam(self):
-        for item in self.final_questions:
-            self.final_questions.append(self.question)
-        return self.exam_name, self.final_questions
+        exam_dict = {}
+
+        for exam_name not in exam_dict.keys():
+
+            
+
+    return exam_dict
+      
+
+
 
 
 
